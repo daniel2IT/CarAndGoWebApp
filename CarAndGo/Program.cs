@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Razor;
+using Microsoft.AspNetCore.StaticFiles;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CarAndGo
 {
