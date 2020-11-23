@@ -9,7 +9,7 @@ namespace CarAndGo.Data.Interfaces
     public interface ICarRepository
     {
         /* use to get all Cars */
-        IEnumerable<Car> Car { get;}
+        IEnumerable<Car> Car {get;}
 
         /* Setted Cars */
         IEnumerable<Car> PreferredCars { get;  }

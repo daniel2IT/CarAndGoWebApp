@@ -23,7 +23,8 @@ namespace CarAndGo
         public void ConfigureServices(IServiceCollection services)
         {
             /* Service Configuration */
-            /* visada kada implemetuojamas interfeisas, mes gauname is jo tam tikra Data AddTransient(interface,implementation)*/
+            /* AddTransient leidzia susieti tam tikra interfeisa ir klase kuri realizuoja ji */
+            /* ICarRepository realizuojasi klaseje MockCarRepository */
             services.AddTransient<ICarRepository, MockCarRepository>();
             services.AddTransient<ICategoryRepository, MockCategoryRepository>();
 
