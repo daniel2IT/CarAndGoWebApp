@@ -1,4 +1,5 @@
 ﻿using CarAndGo.Data.Interfaces;
+using CarAndGo.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -27,9 +28,18 @@ namespace CarAndGo.Controllers
         /* return View() - tiesiog grinas puslapis su HTML be jokiu papildomu funkciju , bet aprasem su atgaunama apacioj >>>> */
         public ViewResult List()
        {
+            /* ViewBag - transfers data only controller to view */
+            ViewBag.Name = "How to use this ViewBag ??? ";
+
            var cars = _carRepository.Car; /* var - tipas kuris visada gali skirtis,  cars - atgauna visus objektus, IAllCars.Car -> funkcija Car,
-                                           * aprasyta paciame interfeisia, leidzianti iskviesti visus objektus, Car(-u) */
-           return View(cars);
+                                           * aprasyta paciame interfeisia, leidzianti iskviesti visus objektus, Car(-u)
+                                           * Tas nevisai teisinga, taigi todel buvo sukurtas ViewModel naudojamas toliau*/
+
+            CarsListViewModel vm = new CarsListViewModel();
+            vm.Cars = _carRepository.Car;
+            vm.CurrentCategory = "CarCategory";
+            
+            return View(vm);
        }
     }
     }

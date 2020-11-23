@@ -1,5 +1,5 @@
-﻿@using CarAndGo.Data.Models;
-@model IEnumerable<Car>
+﻿@using CarAndGo.ViewModels;
+@model CarsListViewModel
 
 @{
     Layout = null;
@@ -14,8 +14,11 @@
 </head>
 <body>
     <h2> Visi musu automobiliai</h2>
+    <!-- VieBag.Name - Name is the name we choose in out controller -->
+    <h2>@Model.CurrentCategory</h2>
+
     @{ 
-        foreach(var car in Model)
+        foreach(var car in Model.Cars)
         {
             <div>
                 <h2> Model: @car.Name </h2>
