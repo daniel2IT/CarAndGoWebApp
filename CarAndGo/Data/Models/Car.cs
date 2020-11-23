@@ -23,7 +23,7 @@ namespace CarAndGo.Data.Models
 
         public bool IsPreferredCar { get; set; }
 
-        public string InStock { get; set; }
+        public bool InStock { get; set; }
 
         /* Foreign Key */
         public int CategoryId { get; set; }
