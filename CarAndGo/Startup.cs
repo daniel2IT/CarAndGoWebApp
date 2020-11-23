@@ -28,23 +28,28 @@ namespace CarAndGo
             services.AddTransient<ICarRepository, MockCarRepository>();
             services.AddTransient<ICategoryRepository, MockCategoryRepository>();
 
-            services.AddMvc();
+            //Old Way
+            // services.AddMvc();
+            // New Ways
+           services.AddRazorPages();
 
-      
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceCollection loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-    /*        loggerFactory.AddLogging(opt =>
-            {
-                opt.AddConsole();
-            });*/
-
             app.UseDeveloperExceptionPage(); 
             app.UseStatusCodePages();/* 404, 200 .. */
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute(); /* ulr kvietimas by default */
+
+            app.UseRouting();
+            app.UseCors();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
+            });
         }
 
     }
