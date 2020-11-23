@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Razor;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using CarAndGo.Data.Interfaces;
+using CarAndGo.Data.mocks;
 
 namespace CarAndGo
 {
@@ -20,6 +22,10 @@ namespace CarAndGo
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            /* Service Configuration */
+            /* visada kada implemetuojamas interfeisas, mes gauname is jo tam tikra Data AddTransient(interface,implementation)*/
+            services.AddTransient<ICarRepository, MockCarRepository>();
+            services.AddTransient<ICategoryRepository, MockCategoryRepository>();
 
             services.AddMvc();
 
