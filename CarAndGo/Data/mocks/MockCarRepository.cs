@@ -23,10 +23,10 @@ namespace CarAndGo.Data.mocks
                         Price = 7495,
                         ShortDescription = "fasfasfasas",
                         Category = _categoryRepository.Categories.First(),
-                        ImageUrl = "https://www.polizinginiai.lt/image.php?i=L2hvbWUvZ3RhdXRvY2FyLmx0L3B1YmxpY19odG1sL2F1dG9pbWcvMjAyMDA0L1RveW90YS1BdXJpcy0zMTE2MzkwNTEtMS00MDAuanBn",
+                        ImageUrl = "/img/Benz.jpg",
                         InStock = true,
                         IsPreferredCar = true,
-                        ImageThumbnaiUrl = "dasdasda"
+                        ImageThumbnaiUrl = "/img/Benz.jpg"
                     },
                     new Car
                     {
@@ -34,10 +34,10 @@ namespace CarAndGo.Data.mocks
                         Price = 7495,
                         ShortDescription = "fasfasfasas",
                         Category = _categoryRepository.Categories.First(),
-                        ImageUrl = "https://www.polizinginiai.lt/image.php?i=L2hvbWUvZ3RhdXRvY2FyLmx0L3B1YmxpY19odG1sL2F1dG9pbWcvMjAyMDA0L1RveW90YS1BdXJpcy0zMTE2MzkwNTEtMS00MDAuanBn",
+                        ImageUrl = "/img/Benz.jpg",
                         InStock = true,
                         IsPreferredCar = true,
-                        ImageThumbnaiUrl = "dasdasda"
+                        ImageThumbnaiUrl = "/img/Benz.jpg"
                     },
                     new Car
                     {
@@ -45,10 +45,10 @@ namespace CarAndGo.Data.mocks
                         Price = 7495,
                         ShortDescription = "fasfasfasas",
                         Category = _categoryRepository.Categories.First(),
-                        ImageUrl = "https://www.polizinginiai.lt/image.php?i=L2hvbWUvZ3RhdXRvY2FyLmx0L3B1YmxpY19odG1sL2F1dG9pbWcvMjAyMDA0L1RveW90YS1BdXJpcy0zMTE2MzkwNTEtMS00MDAuanBn",
+                        ImageUrl = "/img/Benz.jpg",
                         InStock = true,
                         IsPreferredCar = true,
-                        ImageThumbnaiUrl = "dasdasda"
+                        ImageThumbnaiUrl = "/img/Benz.jpg"
                     },
                     new Car
                     {
@@ -56,10 +56,10 @@ namespace CarAndGo.Data.mocks
                         Price = 7495,
                         ShortDescription = "fasfasfasas",
                         Category = _categoryRepository.Categories.First(),
-                        ImageUrl = "https://www.polizinginiai.lt/image.php?i=L2hvbWUvZ3RhdXRvY2FyLmx0L3B1YmxpY19odG1sL2F1dG9pbWcvMjAyMDA0L1RveW90YS1BdXJpcy0zMTE2MzkwNTEtMS00MDAuanBn",
+                        ImageUrl = "/img/Benz.jpg",
                         InStock = true,
                         IsPreferredCar = true,
-                        ImageThumbnaiUrl = "dasdasda"
+                        ImageThumbnaiUrl = "/img/Benz.jpg"
                     },
                     new Car
                     {
@@ -67,10 +67,10 @@ namespace CarAndGo.Data.mocks
                         Price = 7495,
                         ShortDescription = "fasfasfasas",
                         Category = _categoryRepository.Categories.First(),
-                        ImageUrl = "https://www.polizinginiai.lt/image.php?i=L2hvbWUvZ3RhdXRvY2FyLmx0L3B1YmxpY19odG1sL2F1dG9pbWcvMjAyMDA0L1RveW90YS1BdXJpcy0zMTE2MzkwNTEtMS00MDAuanBn",
+                        ImageUrl = "/img/Benz.jpg",
                         InStock = true,
                         IsPreferredCar = true,
-                        ImageThumbnaiUrl = "dasdasda"
+                        ImageThumbnaiUrl = "/img/Benz.jpg"
                     }
                 };
             } 

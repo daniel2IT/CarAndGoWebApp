@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>6a309d4f-5a91-4c45-9520-91d5a70242a3</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\img\" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
 </Project>

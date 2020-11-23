@@ -18,14 +18,19 @@
     <!-- VieBag.Name - Name is the name we choose in out controller -->
     <h2>@Model.CurrentCategory</h2>
 
-    @{ 
-        foreach(var car in Model.Cars)
-        {
-            <div>
-                <h2> Model: @car.Name </h2>
-                <p> Price: @car.Price.ToString("c") </p>
-            </div>
+    <div class="row mt-5 mb-2">
+        @{
+            foreach (var car in Model.Cars)
+            {
+                <div col="col-lg-4">
+                    <img class="img-thumbnail" src="@car.ImageThumbnaiUrl" alt="@car.Name" />
+                    <h2>@car.Name</h2>
+                    <p>@car.ShortDescription</p>
+                    <p class="pull-right"> @car.Price.ToString("c") </p>
+                    <p><a class="btn btn-warning" href="#">Daugiau</a></p>
+                </div>
+            }
         }
-    }
+    </div>
 </body>
 </html>
