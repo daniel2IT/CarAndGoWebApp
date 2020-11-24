@@ -16,6 +16,7 @@ using CarAndGo.Data.mocks;
 using Microsoft.Extensions.Configuration;
 using CarAndGo.Data;
 using Microsoft.EntityFrameworkCore;
+using CarAndGo.Data.Repository;
 
 namespace CarAndGo
 {
@@ -23,7 +24,7 @@ namespace CarAndGo
     {
 
         private IConfigurationRoot _confSting;
-        public Startup(Microsoft.Extensions.Hosting.IHostingEnvironment hostEnv)
+        public Startup(IWebHostEnvironment hostEnv)
         {
             _confSting = new ConfigurationBuilder().SetBasePath(hostEnv.ContentRootPath).AddJsonFile("dbsettings.json").Build();
         }
@@ -35,18 +36,17 @@ namespace CarAndGo
         {
             /* Service Configuration */
             /* AddTransient leidzia susieti tam tikra interfeisa ir klase kuri realizuoja ji */
-            /* ICarRepository realizuojasi klaseje MockCarRepository */
+            /* ICarRepository realizuojasi klaseje ...... */
 
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confSting.GetConnectionString("DefaultConnection")));
-            services.AddTransient<ICarRepository, MockCarRepository>();
-            services.AddTransient<ICategoryRepository, MockCategoryRepository>();
+            services.AddTransient<ICarRepository, CarRepository>(); 
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
 
             //Old Way
             // services.AddMvc();
             // New Ways
            services.AddRazorPages();
-
-            services.AddCors();
+           services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,6 +65,15 @@ namespace CarAndGo
             {
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
             });
+
+
+            /*     using (var scope = app.ApplicationServices.CreateScope()) *//* Startuojant mes visada kviesime ta funkcija *//*
+                 {
+                     AppDBContent content;  
+                     content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
+                 } */
+
+            DBObjects.Initial(app);
         }
 
     }

@@ -12,7 +12,7 @@ namespace CarAndGo.Data.Interfaces
         IEnumerable<Car> Car {get;}
 
         /* Setted Cars */
-        IEnumerable<Car> PreferredCars { get;  }
+        IEnumerable<Car> PreferredCars { get; }
 
         /* for one */
         Car getCarById(int carId);
