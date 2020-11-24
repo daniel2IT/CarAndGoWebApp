@@ -13,18 +13,31 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CarAndGo.Data.Interfaces;
 using CarAndGo.Data.mocks;
+using Microsoft.Extensions.Configuration;
+using CarAndGo.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CarAndGo
 {
     public class Startup
     {
+
+        private IConfigurationRoot _confSting;
+        public Startup(Microsoft.Extensions.Hosting.IHostingEnvironment hostEnv)
+        {
+            _confSting = new ConfigurationBuilder().SetBasePath(hostEnv.ContentRootPath).AddJsonFile("dbsettings.json").Build();
+        }
         // This method gets called by the runtime. Use this method to add services to the container.   
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+
         public void ConfigureServices(IServiceCollection services)
+        
         {
             /* Service Configuration */
             /* AddTransient leidzia susieti tam tikra interfeisa ir klase kuri realizuoja ji */
             /* ICarRepository realizuojasi klaseje MockCarRepository */
+
+            services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confSting.GetConnectionString("DefaultConnection")));
             services.AddTransient<ICarRepository, MockCarRepository>();
             services.AddTransient<ICategoryRepository, MockCategoryRepository>();
 
