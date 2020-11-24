@@ -1,3 +1,20 @@
+# About
+**Here it is Season 2 of our inside academy "Coding Camp Online"!
+
+![image](https://lh3.googleusercontent.com/HH_1Uj3FZGYihf7ANQJlMA_J97xWGCN0FJzNEryAwnLGWTMnIBVo6HLPrtzHxCXocMc0=s85)
+
+**We would like to welcome developers who already started learning about .NET but still want to improve and learn more in our 10 weeks course program. #LearnWithUs
+
+**FREE .NET course every Tuesday starting 17th of November at 6 pm.
+
+**You already have to know:
+C# basics: variables, arithmetic operations, conditional statements, loops, functions, Overloading, Arrays, List, Dictionary, Enum, Struct.
+C# OOP : Class, Inheritance, Overriding, Abstract, Interfaces, Static, Properties.
+
+**You will learn:
+Git, Linq, Unit testing/TTD, MVC web apps, Entity Framework, Web Api, App architecture.
+
+
 **ASP .NET Core MVC**
 
 *.NET Core - 3.1*
