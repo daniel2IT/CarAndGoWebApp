@@ -1,0 +1,11 @@
+﻿@*Duota technologija, perimti html is vieno, kita leidzia sutrumpinti kodo dublikavima,
+    tai reiskia, kad nereiketu keltea kartu rasyti duota koda : *@
+@model Car
+
+<div col="col-lg-4">
+    <img class="img-thumbnail" src="@Model.ImageThumbnaiUrl" alt="@Model.Name" />
+    <h2>@Model.Name</h2>
+    <p>@Model.ShortDescription</p>
+    <p class="pull-right"> @Model.Price.ToString("c") </p>
+    <p><a class="btn btn-warning" href="#">Daugiau</a></p>
+</div>

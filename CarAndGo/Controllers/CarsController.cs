@@ -19,7 +19,7 @@ namespace CarAndGo.Controllers
             /* Iskvieciant interfeisa mes kartu iskvieciame klase, kuris ji realizuoja, kodel? nes mes tai aprasem StartUp 
              * AddTransient<ICarRepository, MockCarRepository> tas metodas, butent suriso mum ta interfeisa su klase
              * logiskai, kad dabar perduodant interfeisa, bet kur, mes su jo gausime klase prirista per AddTransient*/
-            _categoryRepository = categoryRepository;
+           _categoryRepository = categoryRepository;
            _carRepository = carRepository;
               /* is principo mes cia perdavem visus objektus aprasytus Mockse */
        }

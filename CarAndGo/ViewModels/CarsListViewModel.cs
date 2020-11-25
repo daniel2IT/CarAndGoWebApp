@@ -5,7 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace CarAndGo.ViewModels
-{
+{   
+
     public class CarsListViewModel
     {
         public IEnumerable<Car> Cars { get; set; }

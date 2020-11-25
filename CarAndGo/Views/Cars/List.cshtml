@@ -6,6 +6,7 @@
     Layout = "_Layout.cshtml";
 }*@
 
+
 <!DOCTYPE html>
 
 <html>
@@ -20,15 +21,9 @@
 
     <div class="row mt-5 mb-2">
         @{
-            foreach (var car in Model.Cars)
+            foreach (Car car in Model.Cars)
             {
-                <div col="col-lg-4">
-                    <img class="img-thumbnail" src="@car.ImageThumbnaiUrl" alt="@car.Name" />
-                    <h2>@car.Name</h2>
-                    <p>@car.ShortDescription</p>
-                    <p class="pull-right"> @car.Price.ToString("c") </p>
-                    <p><a class="btn btn-warning" href="#">Daugiau</a></p>
-                </div>
+                @Html.Partial("AllCars", car) <!--Sablono pajungimas su Partial funkcija car objekta kuri perduodam-->
             }
         }
     </div>
