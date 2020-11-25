@@ -17,6 +17,7 @@ using Microsoft.Extensions.Configuration;
 using CarAndGo.Data;
 using Microsoft.EntityFrameworkCore;
 using CarAndGo.Data.Repository;
+using CarAndGo.Data.Models;
 
 namespace CarAndGo
 {
@@ -47,6 +48,12 @@ namespace CarAndGo
             // New Ways
            services.AddRazorPages();
            services.AddCors();
+
+            services.AddMemoryCache();
+            services.AddSession();/* Servisai nurodantys, kad mes usinam Sesijas ir Cache */
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();/* Servisas leidziantis dirbti su sesijom */
+            services.AddScoped(sp => ShopCart.GetCart(sp));/* Jis leis jeigu 2 naudotojai uzeis i krepseli, tai 2 naudotojams bus skirtingas krepselis */
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,8 +63,7 @@ namespace CarAndGo
             app.UseDeveloperExceptionPage(); 
             app.UseStatusCodePages();/* 404, 200 .. */
             app.UseStaticFiles();
-
-
+            app.UseSession();
             app.UseRouting();
             app.UseCors();
 

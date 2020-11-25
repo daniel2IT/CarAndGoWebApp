@@ -1,0 +1,17 @@
+﻿
+@model ShopCartViewModel
+
+<div class="container">
+    @foreach (var el in Model.shopCart.listShopItems)
+    {
+        <div class="alert alert-warning mt-3">
+            <b>Automobilis:</b> @el.car.Name <br />
+            <b>Kaina:</b> @el.car.Price.ToString("c")
+        </div>
+    }
+    <hr />
+    <div class="btn btn-danger" asp-controller="Order">Sumoketi</div>
+    <!--Po paspaudimo
+        Iskviecia Order
+        Kontroleri-->
+</div>
