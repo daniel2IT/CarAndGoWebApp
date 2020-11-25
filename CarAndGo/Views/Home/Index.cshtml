@@ -1,0 +1,21 @@
+﻿@model HomeViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <h2>Geriausi Automobiliai</h2>
+    <div class="row mt-5 mb-2">
+        @{
+            foreach (Car car in Model.favCars)
+            {
+                @Html.Partial("AllCars", car) <!--Sablono pajungimas su Partial funkcija car objekta kuri perduodam-->
+            }
+        }
+    </div>
+</body>
+</html>
