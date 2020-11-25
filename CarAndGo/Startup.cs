@@ -67,10 +67,15 @@ namespace CarAndGo
             app.UseRouting();
             app.UseCors();
 
+
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
-            });
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("categoryFilter", "Car/{action}/{category?}", defaults: new { Controller="Car",action="List"}); /* Action tikrai zinome kad tai list bet tebune default 
+                                                                                           category List(string category) 
+                                                                                            ? nebutinas, nes kartais noresime visus tiesiog isvesti  */
+                });
 
 
             /*     using (var scope = app.ApplicationServices.CreateScope()) *//* Startuojant mes visada kviesime ta funkcija *//*

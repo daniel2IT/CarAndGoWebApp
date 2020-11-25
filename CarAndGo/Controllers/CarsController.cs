@@ -1,4 +1,5 @@
 ﻿using CarAndGo.Data.Interfaces;
+using CarAndGo.Data.Models;
 using CarAndGo.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -26,20 +27,52 @@ namespace CarAndGo.Controllers
         /* ViewResult - Metodas iskvieciantis visa HTML puslapi */
         /* List() - galejo buti uzvadinta bet kaip , funkcija iskviecianti visa sarasa */
         /* return View() - tiesiog grinas puslapis su HTML be jokiu papildomu funkciju , bet aprasem su atgaunama apacioj >>>> */
-        public ViewResult List()
+       [Route("Car/List")]
+        [Route("Car/List/{category}")]
+        public ViewResult List(string category)
        {
-            /* ViewBag - transfers data only controller to view */
-            ViewBag.Name = "How to use this ViewBag ??? ";
+            string _category = category;
 
-           var cars = _carRepository.Car; /* var - tipas kuris visada gali skirtis,  cars - atgauna visus objektus, IAllCars.Car -> funkcija Car,
+            IEnumerable<Car> cars = null;
+            string currCategory = "";
+
+            if(string.IsNullOrEmpty(category))
+            {
+                cars = _carRepository.Car.OrderBy(i => i.CarId); /* Sortinam pagal ID */
+            }
+            else
+            {
+                if(string.Equals("fuel", category,StringComparison.OrdinalIgnoreCase)) /* StringComparison.OrdinalIgnoreCase ignoroja tame zodije space, bruksniukus (registrus) */
+                {
+                    cars = _carRepository.Car.Where(i => i.Category.CategoryName.Equals("Benzininis")).OrderBy(i => i.CarId);
+                } /* Elektromobiliai */
+                else if(string.Equals("electro", category, StringComparison.OrdinalIgnoreCase))
+                {
+                    cars = _carRepository.Car.Where(i => i.Category.CategoryName.Equals("Elektromobiliai")).OrderBy(i => i.CarId);
+                }
+
+                currCategory = _category; /* kad zinotumeme su kokia kategorija mes dirbame */
+
+            }
+
+            var carObj = new CarsListViewModel
+            {
+                Cars = cars,
+                CurrentCategory = currCategory
+            };
+
+
+        /* ViewBag - transfers data only controller to view */
+        ViewBag.Name = " Puslapis su Automobiliais";
+          /*  var carssss = _carRepository.Car;*/ /* var - tipas kuris visada gali skirtis,  cars - atgauna visus objektus, IAllCars.Car -> funkcija Car,
                                            * aprasyta paciame interfeisia, leidzianti iskviesti visus objektus, Car(-u)
-                                           * Tas nevisai teisinga, taigi todel buvo sukurtas ViewModel naudojamas toliau*/
+                                           * Tas nevisai teisinga, taigi todel buvo sukurtas ViewModel naudojamas toliau*//*
 
             CarsListViewModel vm = new CarsListViewModel();
             vm.Cars = _carRepository.Car;
-            vm.CurrentCategory = "CarCategory";
+            vm.CurrentCategory = "CarCategory";*/
             
-            return View(vm);
+            return View(carObj);
        }
     }
-    }
+}
