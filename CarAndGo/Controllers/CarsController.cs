@@ -27,8 +27,8 @@ namespace CarAndGo.Controllers
         /* ViewResult - Metodas iskvieciantis visa HTML puslapi */
         /* List() - galejo buti uzvadinta bet kaip , funkcija iskviecianti visa sarasa */
         /* return View() - tiesiog grinas puslapis su HTML be jokiu papildomu funkciju , bet aprasem su atgaunama apacioj >>>> */
-       [Route("Car/List")]
-        [Route("Car/List/{category}")]
+       [Route("Cars/List")]
+        [Route("Cars/List/{category}")]
         public ViewResult List(string category)
        {
             string _category = category;
@@ -45,13 +45,15 @@ namespace CarAndGo.Controllers
                 if(string.Equals("fuel", category,StringComparison.OrdinalIgnoreCase)) /* StringComparison.OrdinalIgnoreCase ignoroja tame zodije space, bruksniukus (registrus) */
                 {
                     cars = _carRepository.Car.Where(i => i.Category.CategoryName.Equals("Benzininis")).OrderBy(i => i.CarId);
+                    currCategory = "Klasikiniai automobiliai";
                 } /* Elektromobiliai */
                 else if(string.Equals("electro", category, StringComparison.OrdinalIgnoreCase))
                 {
                     cars = _carRepository.Car.Where(i => i.Category.CategoryName.Equals("Elektromobiliai")).OrderBy(i => i.CarId);
+                    currCategory = "Elektromobiliai";
                 }
 
-                currCategory = _category; /* kad zinotumeme su kokia kategorija mes dirbame */
+              /*  currCategory = _category;*/ /* kad zinotumeme su kokia kategorija mes dirbame */
 
             }
 
