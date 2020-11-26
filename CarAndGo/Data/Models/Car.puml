@@ -1,0 +1,15 @@
+@startuml
+class Car {
+    + CarId : int <<get>> <<set>>
+    + Name : string <<get>> <<set>>
+    + ShortDescription : string <<get>> <<set>>
+    + LongDescription : string <<get>> <<set>>
+    + Price : decimal <<get>> <<set>>
+    + ImageUrl : string <<get>> <<set>>
+    + ImageThumbnaiUrl : string <<get>> <<set>>
+    + IsPreferredCar : bool <<get>> <<set>>
+    + InStock : bool <<get>> <<set>>
+    + CategoryId : int <<get>> <<set>>
+    + <<virtual>> Category : Category <<get>> <<set>>
+}
+@enduml

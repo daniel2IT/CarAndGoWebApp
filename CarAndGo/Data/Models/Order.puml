@@ -1,0 +1,12 @@
+@startuml
+class Order {
+    + id : int <<get>> <<set>>
+    + name : string <<get>> <<set>>
+    + surname : string <<get>> <<set>>
+    + adress : string <<get>> <<set>>
+    + phone : string <<get>> <<set>>
+    + email : string <<get>> <<set>>
+    + orderTime : DateTime <<get>> <<set>>
+    + orderDetails : List<OrderDetail> <<get>> <<set>>
+}
+@enduml

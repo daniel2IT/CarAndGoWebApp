@@ -1,0 +1,7 @@
+@startuml
+interface ICarRepository {
+    Car : IEnumerable<Car> <<get>>
+    PreferredCars : IEnumerable<Car> <<get>>
+    getCarById(carId:int) : Car
+}
+@enduml

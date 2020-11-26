@@ -1,0 +1,8 @@
+@startuml
+class ShopCartItem {
+    + Id : int <<get>> <<set>>
+    + car : Car <<get>> <<set>>
+    + price : decimal <<get>> <<set>>
+    + ShopCartId : string <<get>> <<set>>
+}
+@enduml

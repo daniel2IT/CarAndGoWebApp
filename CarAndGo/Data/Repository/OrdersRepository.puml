@@ -1,0 +1,7 @@
+@startuml
+class OrdersRepository {
+    + OrdersRepository(appDBContent:AppDBContent, shopCart:ShopCart)
+    + createOrder(order:Order) : void
+}
+IAllOrders <|-- OrdersRepository
+@enduml

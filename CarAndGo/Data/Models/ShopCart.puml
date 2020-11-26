@@ -1,0 +1,10 @@
+@startuml
+class ShopCart {
+    + ShopCart(appDBContent:AppDBContent)
+    + ShopCartIddddd : string <<get>> <<set>>
+    + listShopItems : List<ShopCartItem> <<get>> <<set>>
+    + {static} GetCart(services:IServiceProvider) : ShopCart
+    + AddToCart(carrrrr:Car) : void
+    + getShopItems() : List<ShopCartItem>
+}
+@enduml

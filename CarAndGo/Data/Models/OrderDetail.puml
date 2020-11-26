@@ -1,0 +1,10 @@
+@startuml
+class OrderDetail {
+    + id : int <<get>> <<set>>
+    + orderID : int <<get>> <<set>>
+    + CarID : int <<get>> <<set>>
+    + price : decimal <<get>> <<set>>
+    + <<virtual>> car : Car <<get>> <<set>>
+    + <<virtual>> Order : Order <<get>> <<set>>
+}
+@enduml

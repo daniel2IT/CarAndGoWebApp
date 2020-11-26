@@ -1,0 +1,11 @@
+@startuml
+class AppDBContent {
+    + AppDBContent(options:DbContextOptions<AppDBContent>)
+    + Car : DbSet<Car> <<get>> <<set>>
+    + Category : DbSet<Category> <<get>> <<set>>
+    + ShopCartItems : DbSet<ShopCartItem> <<get>> <<set>>
+    + Order : DbSet<Order> <<get>> <<set>>
+    + OrderDetail : DbSet<OrderDetail> <<get>> <<set>>
+}
+DbContext <|-- AppDBContent
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Category {
+    + CategoryId : int <<get>> <<set>>
+    + CategoryName : string <<get>> <<set>>
+    + Description : string <<get>> <<set>>
+    + Cars : List<Car> <<get>> <<set>>
+}
+@enduml

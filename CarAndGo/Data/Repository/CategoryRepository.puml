@@ -1,0 +1,7 @@
+@startuml
+class CategoryRepository {
+    + CategoryRepository(appDBContent:AppDBContent)
+    + Categories : IEnumerable<Category> <<get>>
+}
+ICategoryRepository <|-- CategoryRepository
+@enduml

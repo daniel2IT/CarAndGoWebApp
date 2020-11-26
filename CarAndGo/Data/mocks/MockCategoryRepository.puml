@@ -1,0 +1,6 @@
+@startuml
+class MockCategoryRepository {
+    + Categories : IEnumerable<Category> <<get>>
+}
+ICategoryRepository <|-- MockCategoryRepository
+@enduml

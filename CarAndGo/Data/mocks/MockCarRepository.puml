@@ -1,0 +1,8 @@
+@startuml
+class MockCarRepository {
+    + Car : IEnumerable<Car> <<get>>
+    + PreferredCars : IEnumerable<Car> <<get>>
+    + getCarById(carId:int) : Car
+}
+ICarRepository <|-- MockCarRepository
+@enduml

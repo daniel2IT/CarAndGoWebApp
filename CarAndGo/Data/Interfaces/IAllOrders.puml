@@ -1,0 +1,5 @@
+@startuml
+interface IAllOrders {
+    createOrder(order:Order) : void
+}
+@enduml

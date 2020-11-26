@@ -1,0 +1,6 @@
+@startuml
+class DBObjects {
+    + {static} Initial(applicationBuilder:IApplicationBuilder) : void
+    + {static} Categories : Dictionary<string, Category> <<get>>
+}
+@enduml

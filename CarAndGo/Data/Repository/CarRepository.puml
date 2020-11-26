@@ -1,0 +1,9 @@
+@startuml
+class CarRepository {
+    + CarRepository(appDBContent:AppDBContent)
+    + Car : IEnumerable<Car> <<get>>
+    + PreferredCars : IEnumerable<Car> <<get>>
+    + getCarById(carId:int) : Car
+}
+ICarRepository <|-- CarRepository
+@enduml
