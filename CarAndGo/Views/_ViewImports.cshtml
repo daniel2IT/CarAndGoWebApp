@@ -1,3 +1,6 @@
 ﻿@using CarAndGo.ViewModels
 @using CarAndGo.Data.Models
 @* dabar visi Views, naudot Models by default , ziureti List.cshtml pati virsutini komenta using CarAndGo.ViewModels;*@
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@* Pvz dabar su tais Helperiais mums nebutina rasyti visada href (Ziureti Layout), o uztenka parasyti asp-controller="Ir koksia kontroleris naudojamas bus" aso-action=Index(Cia bus kaip Controlerio Metodas kuris) *@

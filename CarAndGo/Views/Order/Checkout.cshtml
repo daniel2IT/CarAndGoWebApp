@@ -1,0 +1,48 @@
+﻿@model Order
+    <h3>Atsiskaitymas</h3> <!--post - duomenu siuntimo metodas-->
+    <div class="row">
+        <form asp-action="Checkout" method="post" class="form-horizontal">
+            <!--Kai bus spaudziamas mygtukas Baigti, bus tas veiksmas asp-action ... -->
+            <div class="form-group">
+                <!--Blokas kad graziau atrodytu-->
+                <label asp-for="name"></label> <!--labelije bus tam tikras Default Parasas, nu tipo iveskite kazka ..-->    <!--asp-for - su kokiu lauku dirbame, laukai aprasyti Order.cs(-e) -->
+                <div>
+                    <!--Blokas kad graziau atrodytu-->
+                    <input asp-for="name" class="form-control" />
+                    <!--Inputas automatiskai reaguoja i Tipus, pvz name yra string tipo, tai reiskia
+                    kad stringai galimi ivedimui ... Jeigu pvz cia butu int, tai
+                    mums leistu ivedineti tik skaicius 1,2,3,4,5,6...-->
+                    <span asp-validation-for="name" class="text-danger"></span> <!--Sukuriamas taip pat patikrinimas -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="surname"></label>
+                <div>
+                    <input class="form-control form-control-lg" type="text" asp-for="surname" />
+                    <span asp-validation-for="surname" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="adress"></label>
+                <div>
+                    <input asp-for="adress" class="form-control" />
+                    <span asp-validation-for="adress" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="phone"></label>
+                <div>
+                    <input asp-for="phone" class="form-control" />
+                    <span asp-validation-for="phone" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="email"></label>
+                <div>
+                    <input asp-for="email" class="form-control" />
+                    <span asp-validation-for="email" class="text-danger"></span>
+                </div>
+            </div>
+            <input class="btn btn-success" type="submit" value="Baigti Uzsakyma" />
+        </form>
+    </div>

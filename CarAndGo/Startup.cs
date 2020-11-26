@@ -42,11 +42,12 @@ namespace CarAndGo
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confSting.GetConnectionString("DefaultConnection")));
             services.AddTransient<ICarRepository, CarRepository>(); 
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IAllOrders, OrdersRepository>();
 
             //Old Way
             // services.AddMvc();
             // New Ways
-           services.AddRazorPages();
+            services.AddRazorPages();
            services.AddCors();
 
             services.AddMemoryCache();

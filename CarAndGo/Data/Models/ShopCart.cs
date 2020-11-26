@@ -18,7 +18,7 @@ namespace CarAndGo.Data.Models
         {
             /* Ta vieta reikalinga tam, kad mes galetumeme dirbti su DB */
             this.appDBContent = appDBContent;
-        }
+        } 
 
         public string ShopCartIddddd { get; set; } /* Benzininis/Elektromobilis Krepselio paskirstimui*/
 
