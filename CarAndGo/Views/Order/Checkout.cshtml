@@ -8,7 +8,7 @@
                 <label asp-for="name"></label> <!--labelije bus tam tikras Default Parasas, nu tipo iveskite kazka ..-->    <!--asp-for - su kokiu lauku dirbame, laukai aprasyti Order.cs(-e) -->
                 <div>
                     <!--Blokas kad graziau atrodytu-->
-                    <input asp-for="name" class="form-control" />
+                    <input asp-for="name" class="form-control" data-val-length-max="20" maxlength="20"/>
                     <!--Inputas automatiskai reaguoja i Tipus, pvz name yra string tipo, tai reiskia
                     kad stringai galimi ivedimui ... Jeigu pvz cia butu int, tai
                     mums leistu ivedineti tik skaicius 1,2,3,4,5,6...-->
@@ -18,28 +18,28 @@
             <div class="form-group">
                 <label asp-for="surname"></label>
                 <div>
-                    <input class="form-control form-control-lg" type="text" asp-for="surname" />
+                    <input class="form-control form-control-lg" type="text" asp-for="surname"  data-val-length-max="20" maxlength="20"/>
                     <span asp-validation-for="surname" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group">
                 <label asp-for="adress"></label>
                 <div>
-                    <input asp-for="adress" class="form-control" />
+                    <input asp-for="adress" class="form-control"  data-val-length-max="20" maxlength="20"/>
                     <span asp-validation-for="adress" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group">
                 <label asp-for="phone"></label>
                 <div>
-                    <input asp-for="phone" class="form-control" />
+                    <input asp-for="phone" class="form-control"  data-val-length-max="20" maxlength="20"/>
                     <span asp-validation-for="phone" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group">
                 <label asp-for="email"></label>
                 <div>
-                    <input asp-for="email" class="form-control" />
+                    <input asp-for="email" class="form-control"  data-val-length-max="20" maxlength="20"/>
                     <span asp-validation-for="email" class="text-danger"></span>
                 </div>
             </div>

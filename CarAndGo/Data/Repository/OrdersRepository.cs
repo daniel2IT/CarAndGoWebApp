@@ -24,6 +24,7 @@ namespace CarAndGo.Data.Repository
         {
             order.orderTime = DateTime.Now;
             appDBContent.Order.Add(order); /* Uzsakymas added to table Order*/
+            appDBContent.SaveChanges();
 
             var items = shopCart.listShopItems; /* prekes kurias uzsako naudotojas */
 
@@ -33,7 +34,7 @@ namespace CarAndGo.Data.Repository
                 {
                     CarID = el.car.CarId,
                     orderID = order.id,
-                    price = Convert.ToUInt32(el.car.Price)
+                    price = el.car.Price
                 };
                 appDBContent.OrderDetail.Add(orderDetail);
             }

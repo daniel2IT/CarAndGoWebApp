@@ -10,7 +10,7 @@ namespace CarAndGo.Data.Models
         public int id { get; set; } /* DUom Bazes */
         public int orderID{ get; set; } /*Uzsakymo */
         public int CarID { get; set; } /* Konkretas isigito automobilio id */
-        public uint price { get; set; } /* bendra */
+        public decimal price { get; set; } /* bendra */
         public virtual Car car { get; set; } /*  reikalingas tiesiog parodyti DB rysi */
         public virtual Order Order{ get; set; } /* 2 tie virtual atsakingi uz Objekta ir uzsakyma su kuriais dirbame */
 
