@@ -3,4 +3,5 @@ class MockCategoryRepository {
     + Categories : IEnumerable<Category> <<get>>
 }
 ICategoryRepository <|-- MockCategoryRepository
+Category <|-- MockCategoryRepository
 @enduml

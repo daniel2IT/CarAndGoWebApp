@@ -2,4 +2,5 @@
 interface IAllOrders {
     createOrder(order:Order) : void
 }
+Order <|-- IAllOrders
 @enduml

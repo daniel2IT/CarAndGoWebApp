@@ -1,0 +1,7 @@
+@startuml
+class CarsListViewModel {
+    + Cars : IEnumerable<Car> <<get>> <<set>>
+    + CurrentCategory : string <<get>> <<set>>
+}
+Car <|-- CarsListViewModel
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class CarsController {
+    + CarsController(categoryRepository:ICategoryRepository, carRepository:ICarRepository)
+    + List(category:string) : ViewResult
+}
+Controller <|-- CarsController
+@enduml

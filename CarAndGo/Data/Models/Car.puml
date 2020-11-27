@@ -12,4 +12,5 @@ class Car {
     + CategoryId : int <<get>> <<set>>
     + <<virtual>> Category : Category <<get>> <<set>>
 }
+Category <|-- Car
 @enduml

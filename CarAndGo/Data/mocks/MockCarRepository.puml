@@ -5,4 +5,5 @@ class MockCarRepository {
     + getCarById(carId:int) : Car
 }
 ICarRepository <|-- MockCarRepository
+Car <|-- MockCarRepository
 @enduml

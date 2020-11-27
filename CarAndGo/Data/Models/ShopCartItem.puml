@@ -5,4 +5,5 @@ class ShopCartItem {
     + price : decimal <<get>> <<set>>
     + ShopCartId : string <<get>> <<set>>
 }
+ShopCart <|-- ShopCartItem
 @enduml

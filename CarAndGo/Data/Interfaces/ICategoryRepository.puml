@@ -2,4 +2,5 @@
 interface ICategoryRepository {
     Categories : IEnumerable<Category> <<get>>
 }
+Category <|-- ICategoryRepository
 @enduml

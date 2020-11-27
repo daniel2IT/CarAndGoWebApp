@@ -1,0 +1,7 @@
+@startuml
+class HomeController {
+    + HomeController(carRep:ICarRepository)
+    + Index() : ViewResult
+}
+Controller <|-- HomeController
+@enduml

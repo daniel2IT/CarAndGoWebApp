@@ -7,4 +7,6 @@ class OrderDetail {
     + <<virtual>> car : Car <<get>> <<set>>
     + <<virtual>> Order : Order <<get>> <<set>>
 }
+Car <|-- OrderDetail
+Order <|-- OrderDetail
 @enduml

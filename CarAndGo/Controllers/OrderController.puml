@@ -1,0 +1,9 @@
+@startuml
+class OrderController {
+    + OrderController(allOrders:IAllOrders, shopCart:ShopCart)
+    + Checkout() : IActionResult
+    + Checkout(order:Order) : IActionResult
+    + Complete() : IActionResult
+}
+Controller <|-- OrderController
+@enduml

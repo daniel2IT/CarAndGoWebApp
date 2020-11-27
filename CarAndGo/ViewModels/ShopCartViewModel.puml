@@ -1,0 +1,6 @@
+@startuml
+class ShopCartViewModel {
+    + shopCart : ShopCart <<get>> <<set>>
+}
+ShopCart <|-- ShopCartViewModel
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class ShopCartController {
+    + ShopCartController(carRep:ICarRepository, shopCart:ShopCart)
+    + Index() : ViewResult
+    + addToCart(id:int) : RedirectToActionResult
+}
+Controller <|-- ShopCartController
+@enduml
