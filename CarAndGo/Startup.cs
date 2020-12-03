@@ -72,11 +72,12 @@ namespace CarAndGo
             app.UseCors();
 
             app.UseAuthentication(); // UseIndentity();
-
+            app.UseAuthorization();
 
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute("categoryFilter", "Cars/{action}/{category?}", defaults: new { Controller="Cars",action="List"}); /* Action tikrai zinome kad tai list bet tebune default 
                                                                                            category List(string category) 

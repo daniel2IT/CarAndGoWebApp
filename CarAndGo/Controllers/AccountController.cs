@@ -1,4 +1,5 @@
 ﻿using CarAndGo.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace CarAndGo.Controllers
 {
+    
     public class AccountController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager; /* UserManager API CRUD operations .. Delete, Create .. */
@@ -81,6 +83,7 @@ namespace CarAndGo.Controllers
         }
 
         /* Log Out method */
+        [Authorize] /* Authorize - means only LogIn users can LogOut */
         [HttpPost]
         public async Task<IActionResult> Logout()
         {

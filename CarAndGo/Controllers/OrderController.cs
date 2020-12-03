@@ -1,6 +1,7 @@
 ﻿using CarAndGo.Data;
 using CarAndGo.Data.Interfaces;
 using CarAndGo.Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace CarAndGo.Controllers
             this.shopCart = shopCart;
         }
 
+        [Authorize]
         public IActionResult Checkout()
         { /* IActionResult - pas mus View(-e) bus naudojama Forma, ir is jos reikes atgauti duomen. tai ir 
                                          * tam yra jisai naudojamas, nes jas pades atgaut */
@@ -31,6 +33,7 @@ namespace CarAndGo.Controllers
         [HttpPost] /* Kai gausime Post Request is View (method="post"), tai reiskia ....kada eina post, butinas panaudotas turi 
                     buti tas modelis , musu atveju @model Order, na ir tiesiog cia parasom, kad mes priimame parametra Order
                                                                                                         Checkout(Order order)*/
+        [Authorize]
         public IActionResult Checkout(Order order)
         { /* IActionResult - pas mus View(-e) bus naudojama Forma, ir is jos reikes atgauti duomen. tai ir 
                                          * tam yra jisai naudojamas, nes jas pades atgaut */
