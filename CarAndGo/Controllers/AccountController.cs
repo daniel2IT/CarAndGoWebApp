@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace CarAndGo.Controllers
@@ -14,6 +15,7 @@ namespace CarAndGo.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager; /* UserManager API CRUD operations .. Delete, Create .. */
         private readonly SignInManager<IdentityUser> _signInManager; /*  SignInManger API , for LogIn , SignUp , LogOut etc.. */
+    
 
         public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
@@ -77,6 +79,21 @@ namespace CarAndGo.Controllers
                 if(result.Succeeded)
                 {
                     return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    List<string> dataSet = new List<string>();
+                    int passed = 1;
+
+                    foreach (var i in result.Errors)
+                    {
+                        passed += passed;
+                        dataSet.Add((passed >= 1) ? $"::: {i.Code} --> {i.Description} :::" : "");
+                        
+                    }
+                    ViewBag.data = dataSet;
+
+                    return View();
                 }
             }
             return View(loginViewModel);

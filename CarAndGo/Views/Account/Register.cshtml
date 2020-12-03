@@ -12,7 +12,17 @@
                 <label asp-for="UserName" class="col-md-2 control-label"></label>
                 <div class="col-md-10">
                     <input asp-for="UserName" class="form-control" />
-                    <span asp-validation-for="UserName" class="text-danger"></span>
+                    <label asp-validation-for="UserName" class="text-danger">
+                        @if (ViewBag.data != null)
+                        {
+                            @foreach (var error in ViewBag.data)
+                            {
+                                <li>
+                                    @error
+                                </li>
+                            }
+                        }
+                        </label>
                 </div>
             </div>
             <div class="form-group">
@@ -22,6 +32,9 @@
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
             </div>
+            <div style="text-align:center;">
+                <asp:Label class="field-validation-error" runat="server" ForeColor="Red" Width="100%" Text=""></asp:Label>
+            </div>
             <div class="form-group pull-right formPullRightButton">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" class="btn btn-success " value="Register" />
@@ -30,3 +43,4 @@
         </form>
     </div>
 </div>
+

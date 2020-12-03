@@ -40,7 +40,16 @@ namespace CarAndGo
             /* AddTransient leidzia susieti tam tikra interfeisa ir klase kuri realizuoja ji */
             /* ICarRepository realizuojasi klaseje ...... */
 
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores <AppDBContent>();
+            services.AddIdentity<IdentityUser, IdentityRole>(options => {
+/*                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 12; *//* Max *//*
+                options.Password.RequiredUniqueChars = 6; *//* Minimum  */
+
+            }).AddEntityFrameworkStores <AppDBContent>();
+
 
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confSting.GetConnectionString("DefaultConnection")));
             services.AddTransient<ICarRepository, CarRepository>(); 
