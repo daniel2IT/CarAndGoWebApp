@@ -1,4 +1,6 @@
 ﻿using CarAndGo.Data.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CarAndGo.Data
 {
-    public class AppDBContent : DbContext
+    public class AppDBContent : IdentityDbContext<IdentityUser>
     {
 
         public AppDBContent(DbContextOptions<AppDBContent> options) : base(options)

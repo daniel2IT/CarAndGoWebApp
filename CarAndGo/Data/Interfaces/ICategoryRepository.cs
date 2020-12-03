@@ -11,6 +11,5 @@ namespace CarAndGo.Data.Interfaces
         /* hold all categories */
         IEnumerable<Category> Categories { get; }
 
-
     }
 }

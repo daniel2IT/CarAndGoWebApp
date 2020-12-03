@@ -18,6 +18,7 @@ using CarAndGo.Data;
 using Microsoft.EntityFrameworkCore;
 using CarAndGo.Data.Repository;
 using CarAndGo.Data.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace CarAndGo
 {
@@ -38,6 +39,8 @@ namespace CarAndGo
             /* Service Configuration */
             /* AddTransient leidzia susieti tam tikra interfeisa ir klase kuri realizuoja ji */
             /* ICarRepository realizuojasi klaseje ...... */
+
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores <AppDBContent>();
 
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confSting.GetConnectionString("DefaultConnection")));
             services.AddTransient<ICarRepository, CarRepository>(); 
@@ -67,6 +70,8 @@ namespace CarAndGo
             app.UseSession();
             app.UseRouting();
             app.UseCors();
+
+            app.UseAuthentication(); // UseIndentity();
 
 
 
