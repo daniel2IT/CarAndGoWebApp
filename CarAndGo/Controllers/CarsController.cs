@@ -42,19 +42,34 @@ namespace CarAndGo.Controllers
             }
             else
             {
-                if(string.Equals("fuel", category,StringComparison.OrdinalIgnoreCase)) /* StringComparison.OrdinalIgnoreCase ignoroja tame zodije space, bruksniukus (registrus) */
+                if(string.Equals("encog", category,StringComparison.OrdinalIgnoreCase)) /* StringComparison.OrdinalIgnoreCase ignoroja tame zodije space, bruksniukus (registrus) */
                 {
-                    cars = _carRepository.Car.Where(i => i.Category.CategoryName.Equals("Benzininis")).OrderBy(i => i.CarId);
+                    var listCarsPrice = _carRepository.Car.OrderBy(i => i.CarId);
+
+
+                    List<Car> carSorted = new List<Car>();
+                    List<decimal> PriceDiference = new List<decimal>();
+
+                    foreach (var item in listCarsPrice.ToList())
+                    {
+
+                        // Add New Neural Calculate Difererence Price 
+                        item.NeuralPrice = Convert.ToDecimal(Encog.Neural_Network.Encog_Neural(Convert.ToDouble(item.Price)));
+
+                        carSorted.Add(item);
+                    }
+
+                    // Mezejimo tvarka ( nuo didesnes iki mazejancios ... ) 
+                    cars = carSorted.OrderByDescending(price => price.NeuralPrice);
+
+
                     currCategory = "Klasikiniai automobiliai";
-                } /* Elektromobiliai */
+                } 
                 else if(string.Equals("electro", category, StringComparison.OrdinalIgnoreCase))
                 {
                     cars = _carRepository.Car.Where(i => i.Category.CategoryName.Equals("Elektromobiliai")).OrderBy(i => i.CarId);
                     currCategory = "Elektromobiliai";
                 }
-
-              /*  currCategory = _category;*/ /* kad zinotumeme su kokia kategorija mes dirbame */
-
             }
 
             var carObj = new CarsListViewModel

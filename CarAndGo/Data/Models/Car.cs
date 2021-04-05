@@ -17,6 +17,8 @@ namespace CarAndGo.Data.Models
 
         public decimal Price { get; set; }
 
+        public decimal? NeuralPrice { get; set; }
+
         public string ImageUrl { get; set; }
 
         public string ImageThumbnaiUrl { get; set; }

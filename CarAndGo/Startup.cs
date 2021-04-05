@@ -1,18 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.AspNetCore.Razor;
-using Microsoft.AspNetCore.StaticFiles;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using CarAndGo.Data.Interfaces;
-using CarAndGo.Data.mocks;
 using Microsoft.Extensions.Configuration;
 using CarAndGo.Data;
 using Microsoft.EntityFrameworkCore;
@@ -84,12 +74,6 @@ namespace CarAndGo
                                                                                             ? nebutinas, nes kartais noresime visus tiesiog isvesti  */
                 });
 
-
-            /*     using (var scope = app.ApplicationServices.CreateScope()) *//* Startuojant mes visada kviesime ta funkcija *//*
-                 {
-                     AppDBContent content;  
-                     content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
-                 } */
 
             DBObjects.Initial(app);
         }

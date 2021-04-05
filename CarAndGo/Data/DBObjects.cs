@@ -1,10 +1,8 @@
 ﻿using CarAndGo.Data.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace CarAndGo.Data
 {
@@ -12,7 +10,6 @@ namespace CarAndGo.Data
     {
         public static void Initial(IApplicationBuilder applicationBuilder)
         {/*AppDBContent content*/
-
 
             var scope = applicationBuilder.ApplicationServices.CreateScope();
             var content = scope.ServiceProvider.GetService<AppDBContent>();
@@ -39,7 +36,7 @@ namespace CarAndGo.Data
                     new Car
                     {
                         Name = "a",
-                        Price = 7495,
+                        Price = 974,
                         ShortDescription = "fasfasfasas",
                         Category = Categories["Benzininis"],
                         ImageUrl = "/img/Benz.jpg",
@@ -50,7 +47,7 @@ namespace CarAndGo.Data
                     new Car
                     {
                         Name = "a",
-                        Price = 7495,
+                        Price = 8654,
                         ShortDescription = "fasfasfasas",
                         Category = Categories["Elektromobiliai"],
                         ImageUrl = "/img/Benz.jpg",
@@ -61,7 +58,7 @@ namespace CarAndGo.Data
                     new Car
                     {
                         Name = "a",
-                        Price = 7495,
+                        Price = 2432,
                         ShortDescription = "fasfasfasas",
                         Category = Categories["Benzininis"],
                         ImageUrl = "/img/Benz.jpg",
@@ -72,7 +69,7 @@ namespace CarAndGo.Data
                     new Car
                     {
                         Name = "a",
-                        Price = 7495,
+                        Price = 6342,
                         ShortDescription = "fasfasfasas",
                         Category = Categories["Elektromobiliai"],
                         ImageUrl = "/img/Benz.jpg",
