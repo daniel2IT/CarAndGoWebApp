@@ -22,5 +22,5 @@
 
 ## PARTICIPATED/CONTACT
 
-1. Daniel - [Developer](https://www.greatsampleresume.com/job-responsibilities/it-developer-responsibilities/) - *daniel.vaskevic123@gmail.com*
+1. Daniel - [Developer](https://www.greatsampleresume.com/job-responsibilities/it-developer-responsibilities/) - *[LinkedIN](https://www.linkedin.com/in/danielsvas/)*
 
